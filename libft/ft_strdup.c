@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:51:05 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/06 17:47:04 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:12:57 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 
 char	*ft_strdup(const char *str)
 {
-	char *dup;
-	int i;
+	char	*dup;
 
-	dup = (char *)malloc(sizeof(str) * sizeof(char));
-	i = 0;
-	while (str[i] != 0)
-	{
-		dup[i] = str[i];
-		i++;
-	}
+	dup = (char *)malloc(ft_strlen(str) + 1);
+	if (!dup)
+		return (0);
+	ft_memcpy(dup, str, ft_strlen(str) + 1);
 	return (dup);
 }

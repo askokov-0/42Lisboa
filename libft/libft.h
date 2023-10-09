@@ -6,12 +6,12 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:04:43 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/06 18:48:08 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:26:10 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
+#define LIBFT_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -61,5 +61,7 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nitems, size_t size);
 
 char	*ft_strdup(const char *str);
+
+char    *ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

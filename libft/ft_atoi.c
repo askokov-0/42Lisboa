@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:47:13 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/06 13:00:29 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:11:46 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int neg;
-	int num;
+	int	i;
+	int	neg;
+	int	num;
 
 	i = 0;
 	neg = 1;
