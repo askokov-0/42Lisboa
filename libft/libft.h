@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:04:43 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/09 18:26:10 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:47:12 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,9 @@ void	*ft_calloc(size_t nitems, size_t size);
 char	*ft_strdup(const char *str);
 
 char    *ft_substr(char const *s, unsigned int start, size_t len);
+
+char    *ft_strjoin(char const *s1, char const *s2);
+
+char    *ft_strtrim(char const *s1, char const *set);
 
 #endif

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 16:50:23 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/09 18:13:50 by askokov-         ###   ########.fr       */
+/*   Created: 2023/10/11 16:11:07 by askokov-          #+#    #+#             */
+/*   Updated: 2023/10/11 17:59:57 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char    **ft_split(char const *s, char c)
 {
-	int	i;
+    size_t  i;
+    char    **arr;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == (char)c)
-			return ((char *)(str + i));
-		i++;
-	}
-	if (str[i] == (char)c)
-		return ((char *)(str + i));
-	return (NULL);
+    if (!s || !(arr = malloc(sizeof(s) + 1)))
+        return NULL;
 }
