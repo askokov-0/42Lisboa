@@ -6,7 +6,7 @@
 #    By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 18:07:47 by askokov-          #+#    #+#              #
-#    Updated: 2023/10/11 11:47:22 by askokov-         ###   ########.fr        #
+#    Updated: 2023/10/12 17:14:12 by askokov-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SOURCES = \
 		ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \
 		ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
-		ft_strjoin.c ft_strtrim.c
+		ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c
 
 BSOURCES = \
 
