@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 11:22:54 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/18 17:19:51 by askokov-         ###   ########.fr       */
+/*   Created: 2023/10/18 12:49:12 by askokov-          #+#    #+#             */
+/*   Updated: 2023/10/18 17:04:42 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t	i;
-	size_t	j;
-	char	*str;
+//Returns the last node of the list.
 
-	i = 0;
-	j = 0;
-	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1));
-	if ((!s1 && !s2) || !str)
-		return (NULL);
-	while (s1[j] != 0)
-		str[i++] = s1[j++];
-	j = 0;
-	while (s2[j] != 0)
-		str[i++] = s2[j++];
-	str[i] = 0;
-	return (str);
+t_list	*ft_lstlast(t_list *lst)
+{
+	int	i;
+
+	i = ft_lstsize(lst) - 1;
+	while (i > 0)
+	{
+		lst = lst->next;
+		i--;
+	}
+	return (lst);
 }

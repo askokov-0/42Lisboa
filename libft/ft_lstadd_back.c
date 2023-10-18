@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 11:22:54 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/18 17:19:51 by askokov-         ###   ########.fr       */
+/*   Created: 2023/10/18 12:59:11 by askokov-          #+#    #+#             */
+/*   Updated: 2023/10/18 17:14:21 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t	i;
-	size_t	j;
-	char	*str;
+// Adds the node ’new’ at the end of the list.
 
-	i = 0;
-	j = 0;
-	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1));
-	if ((!s1 && !s2) || !str)
-		return (NULL);
-	while (s1[j] != 0)
-		str[i++] = s1[j++];
-	j = 0;
-	while (s2[j] != 0)
-		str[i++] = s2[j++];
-	str[i] = 0;
-	return (str);
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*aux;
+
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	aux = ft_lstlast(*lst);
+	aux->next = new;
 }

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 11:22:54 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/18 17:19:51 by askokov-         ###   ########.fr       */
+/*   Created: 2023/10/18 13:40:27 by askokov-          #+#    #+#             */
+/*   Updated: 2023/10/18 17:20:22 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t	i;
-	size_t	j;
-	char	*str;
+/*
+Deletes and frees the given node and every
+successor of that node, using the function ’del’
+and	free(3).
+Finally, the pointer to the list must be set to
+NULL.
+*/
 
-	i = 0;
-	j = 0;
-	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1));
-	if ((!s1 && !s2) || !str)
-		return (NULL);
-	while (s1[j] != 0)
-		str[i++] = s1[j++];
-	j = 0;
-	while (s2[j] != 0)
-		str[i++] = s2[j++];
-	str[i] = 0;
-	return (str);
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*next;
+
+	if (!*lst)
+		return ;
+	while (*lst)
+	{
+		next = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = next;
+	}
+	*lst = NULL;
 }

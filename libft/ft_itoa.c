@@ -6,80 +6,72 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 16:10:23 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/12 18:29:00 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:10:37 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char *rev(char *s)
+static int	pos(int n)
 {
-    int i;
-    int j;
-    char    temp;
-
-    i = 1;
-    j = ft_strlen(s);
-    while (i < j)
-    {
-        temp = s[i];
-        s[i] = s[j];
-        s[j] = temp;
-        j--;
-        i++;
-    }
-    return (s);
+	if (n < 0)
+		return (-n);
+	else
+		return (n);
 }
 
-static  char    *itoa_handling(char *s, int n, int len, int neg)
+static int	intlen(int n)
 {
-    int i;
+	size_t	i;
 
-    i = 0;
-    while (i < len)
-    {
-        s[i++] = (n % 10) + '0';
-        n /= 10;
-    }
-    if (neg < 0)
-        s[i - 1] = '-';
-    s[i] = 0;
-    s = rev(s);
-    return (s);
+	i = 1;
+	if (n == 0)
+		return (2);
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }
 
-static  char    *max_handle(char *s, int n)
+static void	rev(char *str)
 {
-    if (n < 0)
-        s = "-2147483648";
-    else
-        s = "2147483647";
-    return (s);
+	size_t	length;
+	size_t	i;
+	char	tmp;
+
+	length = ft_strlen(str);
+	i = 0;
+	while (i < length / 2)
+	{
+		tmp = str[i];
+		str[i] = str[length - i - 1];
+		str[length - i - 1] = tmp;
+		i++;
+	}
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    char    *s;
-    int temp;
-    int neg;
-    int len;
+	char	*str;
+	size_t	i;
+	int		neg;
 
-    neg = 1;
-    temp = n;
-    len = 2;
-    if (n < 0)
-    {
-        neg *= -1;
-        len++;
-        n = -n;
-    }
-    while (temp /= 10)
-        len++;
-    if (!(s = malloc(len * sizeof(char))))
-        return NULL;
-    if (n == 2147483647 || n == -2147483648)
-        max_handle(s, n);
-    else
-        s = itoa_handling(s, n, len, neg);
-    return (s);
+	neg = (n < 0);
+	str = ft_calloc(intlen(n) + neg, sizeof(*str));
+	if (!str)
+		return (NULL);
+	if (n == 0)
+		str[0] = '0';
+	i = 0;
+	while (n != 0)
+	{
+		str[i++] = '0' + pos(n % 10);
+		n = (n / 10);
+	}
+	if (neg)
+		str[i] = '-';
+	rev(str);
+	return (str);
 }
