@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:15:43 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/18 17:13:29 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:35:15 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	nl = 0;
 	while (lst)
 	{
-		node = ft_lstnew(f(lst->content)) l if (!node)
+		node = ft_lstnew(f(lst->content));
+		if (!node)
 		{
 			ft_lstclear(&nl, del);
 			return (NULL);

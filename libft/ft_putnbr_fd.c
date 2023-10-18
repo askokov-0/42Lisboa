@@ -6,11 +6,16 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:08:05 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/16 15:32:32 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:29:24 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+Outputs the integer ’n’ to the given file
+descriptor.
+*/
 
 void	ft_putnbr_fd(int n, int fd)
 {

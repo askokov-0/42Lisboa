@@ -6,11 +6,17 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 16:10:23 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/18 17:10:37 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:27:46 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+Allocates (with malloc(3)) and returns a string
+representing the integer received as an argument.
+Negative numbers must be handled.
+*/
 
 static int	pos(int n)
 {
