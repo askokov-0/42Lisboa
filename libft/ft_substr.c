@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:24:24 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/23 16:37:40 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:50:45 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	end = 0;
 	if (start < slen)
 		end = slen - start;
+	if (end > slen)
+		end = 0;
 	if (end > len)
 		end = len;
-	if (len >= 4294967295)
-		end = 4294967295;
 	sub = malloc((end + 1) * sizeof(char));
 	if (!s || !sub)
 		return (NULL);
