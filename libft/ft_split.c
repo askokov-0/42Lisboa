@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:11:07 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/18 17:27:24 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:35:11 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,27 @@ static char	*ft_word_dup(const char *str, int start, int finish)
 
 	i = 0;
 	word = malloc((finish - start + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
 	while (start < finish)
 		word[i++] = str[start++];
 	word[i] = '\0';
 	return (word);
 }
+
+// static int	free_split(char **split, size_t len)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	while (i <= len)
+// 	{
+// 		free(split[i]);
+// 		i++;
+// 	}
+// 	free(split);
+// 	return (NULL);
+// }
 
 char	**ft_split(char const *s, char c)
 {
@@ -61,8 +77,10 @@ char	**ft_split(char const *s, char c)
 	int		start;
 	char	**arr;
 
-	arr = malloc((ft_word_count(s, c) + 1) * sizeof(char *));
-	if (!s || !arr)
+	if (!s)
+		return (NULL);
+	arr = ft_calloc((ft_word_count(s, c) + 1), sizeof(char *));
+	if (!arr)
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -78,6 +96,5 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	arr[j] = 0;
 	return (arr);
 }
