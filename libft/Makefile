@@ -6,7 +6,7 @@
 #    By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 15:07:12 by askokov-          #+#    #+#              #
-#    Updated: 2023/10/23 16:27:57 by askokov-         ###   ########.fr        #
+#    Updated: 2023/10/25 18:15:53 by askokov-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ fclean:		clean
 
 re:		fclean all
 
-bonus:	$(OBJECTS) $(BOBJECTS)
-		ar rcs $(NAME) $(OBJECTS) $(BOBJECTS)
+bonus:	$(BOBJECTS)
+		ar rcs $(BOBJECTS)
+		touch bonus
 
 .PHONY: all clean fclean re

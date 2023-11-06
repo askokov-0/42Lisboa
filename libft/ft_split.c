@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:11:07 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/23 16:52:06 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:46:37 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,42 +56,49 @@ static char	*ft_word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-// static int	free_split(char **split, size_t len)
-// {
-// 	size_t	i;
+static char	**free_split(char **split, size_t len)
+{
+	size_t	i;
 
-// 	i = 0;
-// 	while (i <= len)
-// 	{
-// 		free(split[i]);
-// 		i++;
-// 	}
-// 	free(split);
-// 	return (NULL);
-// }
+	i = 0;
+	while (i <= len)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (NULL);
+}
+
+static void init_vals(size_t *i, size_t *j, int *start)
+{
+	*i = 0;
+	*j = 0;
+	*start = -1;
+}
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		start;
-	char	**arr;
+	size_t i;
+	size_t j;
+	int start;
+	char **arr;
 
 	if (!s)
 		return (NULL);
 	arr = ft_calloc((ft_word_count(s, c) + 1), sizeof(char *));
 	if (!arr)
 		return (NULL);
-	i = 0;
-	j = 0;
-	start = -1;
+	init_vals(&i, &j, &start);
 	while (i <= ft_strlen(s))
 	{
 		if (s[i] != c && start < 0)
 			start = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && start >= 0)
 		{
-			arr[j++] = ft_word_dup(s, start, i);
+			arr[j] = ft_word_dup(s, start, i);
+			if (!arr[j++])
+				return (free_split(arr, j));
 			start = -1;
 		}
 		i++;
