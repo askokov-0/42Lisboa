@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:20:05 by askokov-          #+#    #+#             */
-/*   Updated: 2023/11/06 14:11:17 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:53:38 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	ft_strrev(char *str)
 	}
 }
 
-int ft_litoa(long num)
+char *ft_litoa(long num)
 {
     char    *str;
     int neg;
-    int len;
+    int i;
 
     neg = 0;
-    len = 0;
+    i = 0;
     if (num == 0)
         return (0);
     if (num < 0)
@@ -46,17 +46,23 @@ int ft_litoa(long num)
         return (NULL);
     while (num > 0)
     {
-        str[len++] = (num%10) + 48;
+        str[i++] = (num%10) + 48;
         num /= 10;
     }
     if (neg)
-        str[len] = '-';
+        str[i] = '-';
     ft_strrev(str);
     return (str);
 }
 
 int ft_putnbr(long num)
 {
-    ft_putstr(ft_litoa(num));
-    return(ft_strlen(num));
+    char    *nb;
+    int len;
+
+    nb = ft_litoa(num);
+    ft_putstr(nb);
+    len = ft_strlen(nb);
+    free(nb);
+    return (len);
 }
