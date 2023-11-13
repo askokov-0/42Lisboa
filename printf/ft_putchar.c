@@ -6,11 +6,11 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:15:38 by askokov-          #+#    #+#             */
-/*   Updated: 2023/11/06 11:48:37 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:55:31 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int ft_putchar(char c)
 {

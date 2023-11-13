@@ -6,11 +6,11 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:18:09 by askokov-          #+#    #+#             */
-/*   Updated: 2023/11/06 11:48:47 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:56:12 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int ft_putstr(char *str)
 {
@@ -19,7 +19,7 @@ int ft_putstr(char *str)
     i = 0;
     while (str[i])
     {
-        write(1, str[i], 1);
+        write(1, &str[i], 1);
         i++;
     }
     return (i);

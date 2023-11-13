@@ -6,11 +6,11 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:20:05 by askokov-          #+#    #+#             */
-/*   Updated: 2023/11/07 16:53:38 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:22:25 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_strrev(char *str)
 {
@@ -40,7 +40,10 @@ char *ft_litoa(long num)
     if (num == 0)
         return (0);
     if (num < 0)
+    {
         neg = 1;
+        num = -num;
+    }
     str = ft_calloc(11 + neg, sizeof(char));
     if (!str)
         return (NULL);
