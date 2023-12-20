@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:34 by askokov-          #+#    #+#             */
-/*   Updated: 2023/11/23 15:24:58 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:08:45 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 char *get_next_line(int fd)
 {
-    static int CLine;
-    char *line;
+    char    *buf;
 
-    if (!fd)
-        return (NULL);
-    line = malloc(BUFFER_SIZE + 1);
-    if (!line)
-        return (NULL);
-    read(fd, line, BUFFER_SIZE);
-    return (line)
+    buf = malloc(BUFFER_SIZE * sizeof(char));
+
+    // read file
+    read(fd, buf, BUFFER_SIZE);
+
+    // buf to stash
+    
+    // check stash for nl
+
+    // change from stash to line and clean stash
+
 }

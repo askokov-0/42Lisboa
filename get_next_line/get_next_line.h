@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:41:14 by askokov-          #+#    #+#             */
-/*   Updated: 2023/11/23 15:24:40 by askokov-         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:15:52 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define GET_NEXT_LINE_H
 
 #ifndef BUFFER_SIZE
-#define BUFFER_SIZE 0
+#define BUFFER_SIZE 5
 #endif
 
 #include <stdlib.h>
