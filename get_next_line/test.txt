@@ -1,0 +1,3 @@
+Text file
+to test the
+get next line function
