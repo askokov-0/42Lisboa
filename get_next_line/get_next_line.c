@@ -6,11 +6,13 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:34 by askokov-          #+#    #+#             */
-/*   Updated: 2024/01/09 16:59:50 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:51:54 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+#include <stdio.h>
 
 char *get_next_line(int fd)
 {
@@ -44,5 +46,7 @@ int main(void)
 {
     int fd;
 
-    fd = open("./test.txt", O_RDONLY);
+    fd = open("test.txt", O_RDONLY);
+
+    printf("%s", get_next_line(fd));
 }

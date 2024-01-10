@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:58 by askokov-          #+#    #+#             */
-/*   Updated: 2024/01/09 16:56:59 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:16:51 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char    *ft_strjoin(char *stash, char *buf)
     int j;
     char *join;
 
-    if (!buf)
+    if (!stash && !buf)
         return (NULL);
     join = malloc(ft_strlen(stash) + ft_strlen(buf) + 1);
     if (!join)
