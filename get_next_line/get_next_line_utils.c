@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:58 by askokov-          #+#    #+#             */
-/*   Updated: 2024/01/10 15:16:51 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:14:12 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int ft_strlen(char *str)
 {
-    int i = 0;
+    int i;
 
-    while (str[i] != 0)
+    i = 0;
+    while (str[i])
         i++;
     return (i);
 }
@@ -47,7 +48,8 @@ int ft_checknl(char *stash)
 {
     int i;
 
-    while (stash[i] != 0)
+    i = 0;
+    while (stash[i])
     {
         if (stash[i] == '\n')
             return (1);
@@ -56,13 +58,14 @@ int ft_checknl(char *stash)
     return (0);
 }
 
-char    *ft_nextLine(char  *stash, char    *line)
+char    *ft_nextLine(char *stash, char *line)
 {
     int lineSize;
     int i;
     
     i = 0;
-    while (stash[lineSize] != '\n')
+    lineSize = 0;
+    while (stash[lineSize] != '\n' && stash[lineSize] != '\0')
         lineSize++;
     line = malloc(lineSize + 2);
     if (!line)

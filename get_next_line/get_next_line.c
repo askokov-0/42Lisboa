@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:34 by askokov-          #+#    #+#             */
-/*   Updated: 2024/01/10 15:51:54 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:50:12 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 char *get_next_line(int fd)
 {
     char    buf[BUFFER_SIZE];
-    char static    *stash;
+    static char    *stash;
     char    *new_stash;
     char    *line;
     char    *temp;
 
+    line = NULL;
     // read file
     read(fd, buf, BUFFER_SIZE);
 
@@ -42,11 +43,11 @@ char *get_next_line(int fd)
         return (NULL);
 }
 
-int main(void)
-{
-    int fd;
+// int main(void)
+// {
+//     int fd;
 
-    fd = open("test.txt", O_RDONLY);
+//     fd = open("test.txt", O_RDONLY);
 
-    printf("%s", get_next_line(fd));
-}
+//     printf("%s", get_next_line(fd));
+// }
