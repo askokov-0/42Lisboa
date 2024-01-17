@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:43:36 by askokov-          #+#    #+#             */
-/*   Updated: 2023/11/17 15:55:20 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/01/17 12:42:23 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,11 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(list);
 	return (counter);
+}
+
+int	main()
+{
+	ft_printf("String: %s", "This is a string");
+	ft_printf("Integer: %d", 1256436);
+	ft_printf("Hex: %X", 1256436);
 }

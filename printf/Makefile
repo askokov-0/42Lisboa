@@ -6,7 +6,7 @@
 #    By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 11:49:46 by askokov-          #+#    #+#              #
-#    Updated: 2023/11/14 13:47:31 by askokov-         ###   ########.fr        #
+#    Updated: 2024/01/17 13:35:03 by askokov-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,22 +21,24 @@ LIBFT = libft
 OBJECTS = $(SOURCES:.c=.o)
 
 CC = cc
+
 CFLAGS = -Wall -Wextra -Werror
+				@cp libft/libft.a .
+				@mv libft.a $(NAME)
+				ar rcs $(NAME) $(OBJECTS)
+
 RM = rm -f
 
 all:	$(NAME)
 
 $(NAME):	$(OBJECTS)
-				@make -C $(LIBFT)
-				@cp libft/libft.a .
-				@mv libft.a $(NAME)
-				ar rcs $(NAME) $(OBJECTS)
+			ar rcs $(NAME) $(OBJECTS)
 
 clean:
 				$(RM) $(OBJECTS)
 				@make clean -C $(LIBFT)
 
-fclean:	clean
+fclean:		clean
 				$(RM) $(NAME)
 				@$(RM) -f $(LIBFT)/libft.a
 
