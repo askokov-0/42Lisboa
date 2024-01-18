@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:34 by askokov-          #+#    #+#             */
-/*   Updated: 2024/01/12 17:04:51 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:03:22 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ char    *ft_strdup(char *buf)
 
 char *get_next_line(int fd)
 {
-    char    buf[BUFFER_SIZE];
-    static char    *stash;
+    static char    buf[BUFFER_SIZE];
+    char    *stash;
     char    *line;
     char    *temp;
     int result;
@@ -38,9 +38,7 @@ char *get_next_line(int fd)
     line = NULL;
     if (BUFFER_SIZE <= 0)
         return (NULL);
-    printf("buff:%s\n", buf);
-    stash = ft_strjoin(stash, buf);
-    printf("stash: %s\n", stash);
+
     while (ft_checknl(stash) == 0 && result > 0)
     {
         printf("read2:%d\n", result = read(fd, buf, BUFFER_SIZE)); 
@@ -57,6 +55,11 @@ char *get_next_line(int fd)
     printf("laststash:%s\n", stash);
     if (ft_checknl(stash) == 0 && result == 0)
         return (stash);
+    while (buf[0] || read(fd, buf, BUFFER_SIZE))
+    {
+        line = ft_strjoin(line, buf);
+        if ()
+    }
     return (line);
 }
 
