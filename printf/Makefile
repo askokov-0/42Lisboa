@@ -6,7 +6,7 @@
 #    By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 11:49:46 by askokov-          #+#    #+#              #
-#    Updated: 2024/01/18 14:27:33 by askokov-         ###   ########.fr        #
+#    Updated: 2024/01/19 12:24:47 by askokov-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,22 +26,22 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-all:	$(NAME)
+all: $(NAME)
 
-$(NAME):	$(OBJECTS)
-			make -C libft
-			cp libft/libft.a .
-			mv libft.a $(NAME)
-			ar rcs $(NAME) $(OBJECTS)
+$(NAME): $(OBJECTS)
+	$(MAKE) -C $(LIBFT)
+	cp $(LIBFT)/libft.a .
+	mv libft.a $(NAME)
+	ar rcs $(NAME) $(OBJECTS)
 
 clean:
-				$(RM) $(OBJECTS)
-				make clean -C $(LIBFT)
+	$(RM) $(OBJECTS)
+	$(MAKE) clean -C $(LIBFT)
 
-fclean:		clean
-				$(RM) $(NAME)
-				$(RM) -f $(LIBFT)/libft.a
+fclean: clean
+	$(RM) $(NAME)
+	$(RM) -f $(LIBFT)/libft.a
 
-re:		fclean all
+re: fclean all
 
 .PHONY: all clean fclean re

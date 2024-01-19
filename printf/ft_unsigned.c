@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:18:39 by askokov-          #+#    #+#             */
-/*   Updated: 2023/11/14 14:06:56 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/01/19 12:25:58 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_printu(unsigned int num)
 	{
 		len += ft_putchar('0');
 	}
-	else 
+	else
 	{
 		str = ft_utoa(num);
 		len += ft_putstr(str);
