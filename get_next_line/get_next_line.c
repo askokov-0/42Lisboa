@@ -6,13 +6,12 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:34 by askokov-          #+#    #+#             */
-/*   Updated: 2024/01/19 15:53:09 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:06:25 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdio.h>
-
 
 char *get_next_line(int fd)
 {
@@ -30,12 +29,10 @@ char *get_next_line(int fd)
     return (line);
 }
 
-
 int main()
 {
     int fd;
     int i;
-
 
     fd = open("test.txt", O_RDONLY);
     i = 0;

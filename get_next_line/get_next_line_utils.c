@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:58 by askokov-          #+#    #+#             */
-/*   Updated: 2024/01/19 16:00:33 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:38:03 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,13 @@ char    *ft_strjoin(char *line, char *buf)
     while (line[j] != 0)
         join[i++] = line[j++];
     j = 0;
-    while (buf[j] != 0)
+    while (buf[i] != '\n' && buf[j] != 0)
         join[i++] = buf[j++];
-    join[i] = 0;
-    free(line);
+    if (buf[i] == '\n')
+        join[i + j++] = '\n';
+    join[i + j] = 0;
+    if (line)
+        free(line);
     return (join);
 }
 
@@ -88,9 +91,18 @@ char    *ft_cleanBuf(char *buf)
     int i;
     int j;
 
-    while (buf[i] != '\n')
-    {
+    while (i < BUFFER_SIZE && buf[i] != '\n')
         buf[i++] = 0;
+    if (buf[i] == '\n')
+    {
+        buf[i] = 0;
+        i++;
+        while (i < BUFFER_SIZE)
+        {
+            buf[j] = buf[i];
+            buf[i] = 0;
+            i++;
+            j++;
+        }
     }
-    
 }
