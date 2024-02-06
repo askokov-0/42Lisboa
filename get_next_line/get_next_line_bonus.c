@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 11:40:34 by askokov-          #+#    #+#             */
-/*   Updated: 2024/02/06 17:15:04 by askokov-         ###   ########.fr       */
+/*   Created: 2024/02/06 15:51:37 by askokov-          #+#    #+#             */
+/*   Updated: 2024/02/06 17:15:59 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include <stdio.h>
+#include "get_next_line_bonus.h"
 
 char    *get_next_line(int fd)
 {
-    static char    buf[BUFFER_SIZE + 1];
+    static char    buf[FOPEN_MAX][BUFFER_SIZE + 1];
     char    *line;
     int i;
     
@@ -23,10 +22,10 @@ char    *get_next_line(int fd)
     if (read(fd, 0, 0) < 0 || BUFFER_SIZE <= 0)
     {
         while (i <= BUFFER_SIZE)
-            buf[i++] = 0;
+            buf[0][i++] = 0;
         return (NULL);
     }
- 
+    
     line = NULL;
     while (buf[0] || read(fd, buf, BUFFER_SIZE))
     {
@@ -36,18 +35,4 @@ char    *get_next_line(int fd)
             return (line);
     }
     return (line);
-}
-
-int main()
-{
-    int fd;
-    int i;
-
-    fd = open("test.txt", O_RDONLY);
-    i = 0;
-    while (i < 3)
-    {
-        printf("NEW LINE!!!!: %s\n", get_next_line(fd));
-        i++;
-    }
 }

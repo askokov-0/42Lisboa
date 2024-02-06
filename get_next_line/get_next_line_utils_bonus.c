@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 11:41:14 by askokov-          #+#    #+#             */
-/*   Updated: 2024/02/06 15:36:39 by askokov-         ###   ########.fr       */
+/*   Created: 2024/02/06 16:58:10 by askokov-          #+#    #+#             */
+/*   Updated: 2024/02/06 18:13:49 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
+int ft_strlen(char  *str)
+{
+    int i;
 
-#ifndef BUFFER_SIZE
-#define BUFFER_SIZE 1
-#endif
-
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-
-char    *get_next_line(int fd);
-
-int ft_strlen(char *str);
-
-char    *ft_strjoin(char *line, char *buf);
-
-void    ft_cleanBuf(char *buf);
-
-#endif
+    i = 0;
+    while (str && str[i])
+}

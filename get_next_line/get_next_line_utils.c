@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:58 by askokov-          #+#    #+#             */
-/*   Updated: 2024/01/22 16:38:03 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:36:32 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int ft_strlen(char *str)
     int i;
 
     i = 0;
-    while (str[i])
+    while (str && str[i])
         i++;
     return (i);
 }
@@ -28,41 +28,26 @@ char    *ft_strjoin(char *line, char *buf)
     int j;
     char *join;
 
-    if (!line)
-    {
-        line = ft_strdup(buf);
-        return (line);
-    }
     join = malloc(ft_strlen(line) + ft_strlen(buf) + 1);
     if (!join)
         return (NULL);
     i = 0;
     j = 0;
-    while (line[j] != 0)
-        join[i++] = line[j++];
-    j = 0;
-    while (buf[i] != '\n' && buf[j] != 0)
-        join[i++] = buf[j++];
-    if (buf[i] == '\n')
-        join[i + j++] = '\n';
-    join[i + j] = 0;
-    if (line)
-        free(line);
-    return (join);
-}
-
-int ft_checknl(char *line)
-{
-    int i;
-
-    i = 0;
-    while (line[i])
+    while (line && line[i] != 0)
     {
-        if (line[i] == '\n')
-            return (1);
+        join[i] = line[i];
         i++;
     }
-    return (0);
+    while (buf && buf[j] != 0 && buf[j] != '\n')
+    {
+        join[i + j] = buf[j];
+        j++;
+    }
+    if (buf && buf[j] == '\n')
+        join[i + j++] = '\n';
+    join[i + j] = 0;
+    free(line);
+    return (join);
 }
 
 char    *ft_nextLine(char *stash, char *line)
@@ -86,11 +71,13 @@ char    *ft_nextLine(char *stash, char *line)
     return (line);
 }
 
-char    *ft_cleanBuf(char *buf)
+void    ft_cleanBuf(char *buf)
 {
     int i;
     int j;
 
+    i = 0;
+    j = 0;
     while (i < BUFFER_SIZE && buf[i] != '\n')
         buf[i++] = 0;
     if (buf[i] == '\n')
