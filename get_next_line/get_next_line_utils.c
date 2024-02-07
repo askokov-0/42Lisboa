@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:58 by askokov-          #+#    #+#             */
-/*   Updated: 2024/02/06 15:36:32 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/02/07 14:40:45 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,27 +48,6 @@ char    *ft_strjoin(char *line, char *buf)
     join[i + j] = 0;
     free(line);
     return (join);
-}
-
-char    *ft_nextLine(char *stash, char *line)
-{
-    int lineSize;
-    int i;
-    
-    i = 0;
-    lineSize = 0;
-    while (stash[lineSize] != '\n' && stash[lineSize] != '\0')
-        lineSize++;
-    line = malloc(lineSize + 2);
-    if (!line)
-        return (NULL);
-    while (i != lineSize + 1)
-    {
-        line[i] = stash[i];
-        i++;
-    }
-    line[i] = 0;
-    return (line);
 }
 
 void    ft_cleanBuf(char *buf)
