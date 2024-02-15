@@ -6,12 +6,11 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:40:34 by askokov-          #+#    #+#             */
-/*   Updated: 2024/02/06 17:15:04 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/02/15 13:51:49 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 char    *get_next_line(int fd)
 {
@@ -26,9 +25,8 @@ char    *get_next_line(int fd)
             buf[i++] = 0;
         return (NULL);
     }
- 
     line = NULL;
-    while (buf[0] || read(fd, buf, BUFFER_SIZE))
+    while (buf[0] || read(fd, buf, BUFFER_SIZE) > 0)
     {
         line = ft_strjoin(line, buf);
         ft_cleanBuf(buf);
@@ -38,16 +36,16 @@ char    *get_next_line(int fd)
     return (line);
 }
 
-int main()
-{
-    int fd;
-    int i;
+// int main()
+// {
+//     int fd;
+//     int i;
 
-    fd = open("test.txt", O_RDONLY);
-    i = 0;
-    while (i < 3)
-    {
-        printf("NEW LINE!!!!: %s\n", get_next_line(fd));
-        i++;
-    }
-}
+//     fd = open("test.txt", O_RDONLY);
+//     i = 0;
+//     while (i < 3)
+//     {
+//         printf("NEW LINE!!!!: %s\n", get_next_line(fd));
+//         i++;
+//     }
+// }

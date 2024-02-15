@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 16:58:10 by askokov-          #+#    #+#             */
-/*   Updated: 2024/02/07 15:08:58 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/02/15 15:29:40 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int ft_strlen(char  *str)
     int i;
 
     i = 0;
-    while (str && str[i])
+    while (str && str[i] && str[i] != '\n')
+        i++;
+    if (str && str[i] == '\n')
         i++;
     return (i);
 }
@@ -30,19 +32,19 @@ char    *ft_strjoin(char *line, char *buf)
 
     join = malloc(ft_strlen(line) + ft_strlen(buf) + 1);
     if (!join)
+    {
+        free(line);
         return (NULL);
+    }
     i = 0;
-    j = 0;
     while (line && line[i])
     {
         join[i] = line[i];
         i++;
     }
-    while (buf && buf[j])
-    {
+    j = -1;
+    while ((++j >= 0) && buf[j] != '\n' && buf[j])
         join[i + j] = buf[j];
-        j++;
-    }
     if (buf && buf[j] == '\n')
         join[i + j++] = '\n';
     join[i + j] = 0;

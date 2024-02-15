@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:41:14 by askokov-          #+#    #+#             */
-/*   Updated: 2024/02/06 15:36:39 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/02/15 13:51:53 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdio.h>
 
 char    *get_next_line(int fd);
 

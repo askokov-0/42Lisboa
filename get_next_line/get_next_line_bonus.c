@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:51:37 by askokov-          #+#    #+#             */
-/*   Updated: 2024/02/07 15:17:14 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/02/15 13:12:42 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,19 @@ char    *get_next_line(int fd)
     int i;
     
     i = 0;
-    if (read(fd, 0, 0) < 0 || BUFFER_SIZE <= 0)
+    if (read(fd, buf, 0) < 0 || FOPEN_MAX <= fd || BUFFER_SIZE <= 0)
     {
-        while (i <= BUFFER_SIZE)
-            buf[0][i++] = 0;
+        if (fd > 0 && fd < FOPEN_MAX)
+            while (buf[fd][i])
+                buf[fd][i++] = 0;
         return (NULL);
     }
     
     line = NULL;
-    while (buf[0] || read(fd, buf, BUFFER_SIZE))
+    while (buf[fd][0] || read(fd, buf[fd], BUFFER_SIZE))
     {
-        line = ft_strjoin(line, buf);
-        ft_cleanBuf(buf);
+        line = ft_strjoin(line, buf[fd]);
+        ft_cleanBuf(buf[fd]);
         if (line[ft_strlen(line) - 1] == '\n')
             return (line);
     }
