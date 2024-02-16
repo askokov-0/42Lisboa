@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 11:40:58 by askokov-          #+#    #+#             */
-/*   Updated: 2024/02/16 15:51:48 by askokov-         ###   ########.fr       */
+/*   Created: 2024/02/16 15:08:05 by askokov-          #+#    #+#             */
+/*   Updated: 2024/02/16 15:58:37 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,31 +24,31 @@ int ft_strlen(char *str)
     return (i);
 }
 
-char    *ft_strjoin(char *line, char *buf)
+char    *ft_strjoin(char *s1, char *s2)
 {
-    int i;
-    int j;
-    char *join;
+    char    *join;
+    int     i;
+    int     j;
 
-    join = malloc(ft_strlen(line) + ft_strlen(buf) + 1);
+    join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
     if (!join)
         return (NULL);
     i = 0;
-    j = 0;
-    while (line && line[i] != 0)
+    while (s1 && s1[i])
     {
-        join[i] = line[i];
+        join[i] = s1[i];
         i++;
     }
-    while (buf && buf[j] != 0 && buf[j] != '\n')
+    j = 0;
+    while (s2 && s2[j] && s2[j] != '\n')
     {
-        join[i + j] = buf[j];
+        join[i + j] = s2[j];
         j++;
     }
-    if (buf && buf[j] == '\n')
+    if (s2 && s2[j] == '\n')
         join[i + j++] = '\n';
     join[i + j] = 0;
-    free(line);
+    free(s1);
     return (join);
 }
 
@@ -59,7 +59,7 @@ void    ft_cleanBuf(char *buf)
 
     i = 0;
     j = 0;
-    while (i < BUFFER_SIZE && buf[i] != '\n')
+    while (buf[i] && buf[i] != '\n')
     {
         buf[i] = 0;
         i++;
@@ -68,7 +68,7 @@ void    ft_cleanBuf(char *buf)
     {
         buf[i] = 0;
         i++;
-        while (i < BUFFER_SIZE)
+        while (buf[i])
         {
             buf[j] = buf[i];
             buf[i] = 0;
