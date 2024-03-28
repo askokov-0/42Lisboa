@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: skeleton093 <skeleton093@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:04:13 by askokov-          #+#    #+#             */
-/*   Updated: 2024/03/28 16:53:03 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/03/28 23:33:33 by skeleton093      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*get_next_line(int fd)
 	int			i;
 
 	i = 0;
-	if (FOPEN_MAX <= fd || BUFFER_SIZE <= 0)
+	if (fd < 0 || FOPEN_MAX <= fd || BUFFER_SIZE <= 0)
 	{
 		if (fd > 0 && fd < FOPEN_MAX)
 			while (buf[fd][i])
