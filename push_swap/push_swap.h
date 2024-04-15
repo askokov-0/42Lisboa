@@ -19,4 +19,8 @@ typedef struct s_stack_node
     struct s_stack_node *prev;
 } stack_node;
 
+int main(int argc, char **argv);
+
+void    init_stack_a(stack_node **a, char **argv);
+
 #endif
