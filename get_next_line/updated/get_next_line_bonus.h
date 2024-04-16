@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:04:47 by askokov-          #+#    #+#             */
-/*   Updated: 2024/03/13 14:51:07 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:56:59 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE 
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 42
+# endif
+
+# ifndef FOPEN_MAX
+#  define FOPEN_MAX 1024
 # endif
 
 # include <unistd.h>

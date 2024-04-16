@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 14:04:13 by askokov-          #+#    #+#             */
-/*   Updated: 2024/03/29 12:49:52 by askokov-         ###   ########.fr       */
+/*   Created: 2024/03/29 13:05:24 by askokov-          #+#    #+#             */
+/*   Updated: 2024/03/29 13:38:54 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ char	*get_next_line(int fd)
 	int			i;
 
 	i = 0;
-	if (fd < 0 || FOPEN_MAX <= fd || BUFFER_SIZE <= 0)
+	if (FOPEN_MAX <= fd || fd < 0 || BUFFER_SIZE <= 0)
 	{
 		if (fd > 0 && fd < FOPEN_MAX)
-			while (buf[fd][i])
+			while (i <= BUFFER_SIZE)
 				buf[fd][i++] = 0;
 		return (NULL);
 	}
 	line = NULL;
-	while (buf[fd][0] || read(fd, buf[fd], BUFFER_SIZE))
+	while (buf[fd][0] || read(fd, buf[fd], BUFFER_SIZE) > 0)
 	{
 		line = ft_strjoin(line, buf[fd]);
 		ft_cleanbuf(buf[fd]);
@@ -36,19 +36,3 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
-// int main()
-// {
-// 	int fd = open("a.txt", O_RDONLY);
-// 	int fd2 = open("b.txt", O_RDONLY);
-// 	char *line;
-
-// 	while ((line = get_next_line(fd)))
-// 	{
-// 		printf("%s", line);
-// 		free(line);
-// 		line = get_next_line(fd2);
-// 		printf("%s", line);
-// 		free(line);
-// 	}
-// }

@@ -6,7 +6,7 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:11:07 by askokov-          #+#    #+#             */
-/*   Updated: 2023/10/25 17:46:37 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/03/26 13:58:03 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,3 +105,32 @@ char	**ft_split(char const *s, char c)
 	}
 	return (arr);
 }
+
+// #include <stdio.h>
+
+// static void ft_printstrs(char **splitted)
+// {
+// 	int i =0;
+
+// 	while (splitted[i])
+// 	{
+// 		printf("%s\n", splitted[i]);
+// 		i++;
+// 	}
+// }
+
+// int main()
+// {
+// 	char	*str = "onepieceisreal";
+// 	char	c = 'i';
+// 	char	**splitted;
+// 	splitted = ft_split(str, c);
+// 	ft_printstrs(splitted);
+// 	int i = 0;
+// 	while (splitted[i])
+// 	{
+// 		free(splitted[i]);
+// 		i++;
+// 	}
+// 	free(splitted);
+// }
