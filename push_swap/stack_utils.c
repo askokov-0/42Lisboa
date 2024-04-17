@@ -1,5 +1,5 @@
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 bool stack_sorted(stack_node *stack)
 {

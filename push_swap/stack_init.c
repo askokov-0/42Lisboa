@@ -1,5 +1,5 @@
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 void    init_stack_a(stack_node **a, char **argv)
 {

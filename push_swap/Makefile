@@ -7,8 +7,6 @@ OBJECTS = $(SOURCES:.c=.o)
 
 LIBFT = libft
 
-PRINTF = printf
-
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
