@@ -6,14 +6,14 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:35:14 by askokov-          #+#    #+#             */
-/*   Updated: 2023/11/14 14:16:22 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:36:02 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft/libft.h"
+# include "../libft.h"
 # include <stdarg.h>
 
 int	ft_putstr(char *str);

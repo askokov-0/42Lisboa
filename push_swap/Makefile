@@ -1,9 +1,9 @@
 
-NAME = push_swap.a
+NAME = push_swap
 
-SOURCES = 
+SRC_PATH = src/
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJ_PATH = obj/
 
 LIBFT = libft
 
