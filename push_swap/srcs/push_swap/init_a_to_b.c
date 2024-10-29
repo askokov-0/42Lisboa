@@ -6,11 +6,11 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:58:53 by askokov-          #+#    #+#             */
-/*   Updated: 2024/04/24 14:45:08 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:36:14 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 void current_index(stack_node *stack)
 {

@@ -6,11 +6,11 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:17:27 by askokov-          #+#    #+#             */
-/*   Updated: 2024/04/22 15:21:53 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:36:13 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 static void set_target_b(stack_node *a, stack_node *b)
 {

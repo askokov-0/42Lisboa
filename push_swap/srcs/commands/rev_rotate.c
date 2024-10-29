@@ -6,11 +6,11 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:41:56 by askokov-          #+#    #+#             */
-/*   Updated: 2024/04/22 14:41:59 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/29 16:54:04 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 static void rev_rotate(stack_node **stack)
 {

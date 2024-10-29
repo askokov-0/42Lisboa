@@ -6,18 +6,18 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:15:42 by askokov-          #+#    #+#             */
-/*   Updated: 2024/04/22 13:22:00 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/29 16:54:24 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 static void rotate(stack_node **stack)
 {
     stack_node *last_node;
     
     if (!*stack || !(*stack)->next)
-        return :
+        return;
     last_node = find_last(*stack);
     last_node->next = *stack;
     *stack = (*stack)->next;

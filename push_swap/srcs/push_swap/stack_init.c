@@ -6,11 +6,11 @@
 /*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:23:02 by askokov-          #+#    #+#             */
-/*   Updated: 2024/04/22 15:35:03 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:36:11 by askokov-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 static long ft_atol(const char *s)
 {

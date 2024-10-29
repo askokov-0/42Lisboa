@@ -4,8 +4,8 @@
 
 # include <stdbool.h>
 # include <limits.h>
-# include "../libft/libft.h"
-# include "../libft/printf/printf.h"
+# include "../srcs/libft/libft.h"
+# include "../srcs/libft/printf/ft_printf.h"
 
 typedef struct s_stack_node
 {
@@ -49,12 +49,12 @@ void sb(stack_node **b, bool print);
 void ss(stack_node **a, bool print);
 void ra(stack_node **a, bool print);
 void rb(stack_node **b, bool print);
-void rr(stack_node **a, bool print);
+void rr(stack_node **a, stack_node **b, bool print);
 void rra(stack_node **a, bool print);
 void rrb(stack_node **b, bool print);
-void rrr(stack_node **a, bool print);
-void pa(stack_node **a, bool print);
-void pb(stack_node **b, bool print);
+void rrr(stack_node **a, stack_node **b, bool print);
+void pa(stack_node **a, stack_node **b, bool print);
+void pb(stack_node **b, stack_node **a, bool print);
 
 // Algorithm
 void sort_three(stack_node **a);
