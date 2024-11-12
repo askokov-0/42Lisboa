@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: skeleton093 <skeleton093@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:41:51 by askokov-          #+#    #+#             */
-/*   Updated: 2024/10/29 16:38:08 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:08:44 by skeleton093      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static void push(stack_node **dst, stack_node **src)
         push_node->next->prev = push_node;
         *dst = push_node;
     }
+
 }
 
 void pa(stack_node **a, stack_node **b, bool print)

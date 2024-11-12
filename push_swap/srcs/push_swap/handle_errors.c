@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: skeleton093 <skeleton093@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:50:48 by askokov-          #+#    #+#             */
-/*   Updated: 2024/10/29 15:36:14 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:10:24 by skeleton093      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int error_syntax(char *str_n)
 {
     if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
-        retunr (1);
+        return (1);
     if ((*str_n == '+' || *str_n == '-') && !(str_n[1] >= '0' && str_n[1] <= '9'))
         return (1);
     while (*++str_n)
@@ -57,7 +57,7 @@ void free_stack(stack_node **stack)
     *stack = NULL;
 }
 
-void free_errors(stack **a)
+void free_errors(stack_node **a)
 {
     free_stack(a);
     ft_printf("Error\n");

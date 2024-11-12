@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: skeleton093 <skeleton093@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:36:22 by askokov-          #+#    #+#             */
-/*   Updated: 2024/10/29 15:36:17 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:07:52 by skeleton093      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void swap(stack_node **head)
 {
     if (!*head || !(*head)->next)
-        return :
+        return ;
     *head = (*head)->next;
     (*head)->prev->prev = *head;
     (*head)->prev->next = (*head)->next;

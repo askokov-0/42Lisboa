@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: skeleton093 <skeleton093@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:58:53 by askokov-          #+#    #+#             */
-/*   Updated: 2024/10/29 15:36:14 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:18:11 by skeleton093      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static void cost_analysis_a(stack_node *a, stack_node *b)
 void set_cheapest(stack_node *stack)
 {
     long cheapest_value;
-    stack_node cheapest_node;
+    stack_node *cheapest_node;
 
     if (!stack)
     return ;

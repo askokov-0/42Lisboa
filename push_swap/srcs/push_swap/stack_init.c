@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: askokov- <askokov-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: skeleton093 <skeleton093@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:23:02 by askokov-          #+#    #+#             */
-/*   Updated: 2024/10/29 15:36:11 by askokov-         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:26:19 by skeleton093      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static long ft_atol(const char *s)
     }
     while (ft_isdigit(*s))
         result = result * 10 + (*s++ - '0');
-    return (return * sign);
+    return (result * sign);
 }
 
 static void append_node(stack_node **stack, int n)
@@ -51,7 +51,7 @@ static void append_node(stack_node **stack, int n)
     }
     else
     {
-        last_node = fid_last(*stack);
+        last_node = find_last(*stack);
         last_node->next = node;
         node->prev = last_node;
     }
